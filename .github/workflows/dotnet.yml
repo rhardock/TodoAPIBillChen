@@ -23,7 +23,11 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
-
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.6.2
       with:
@@ -32,8 +36,3 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: .
         # The desired behavior if no files are found using the provided path.
-
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
