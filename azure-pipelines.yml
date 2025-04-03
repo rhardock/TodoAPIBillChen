@@ -39,13 +39,13 @@ steps:
     ArtifactName: 'todoAPI3'
     publishLocation: 'Container'
 
-  - task: DotNetCoreCLI@2
-    displayName: dotnet pack
-    inputs:
-      command: pack
-      versioningScheme: byPrereleaseNumber
-  - task: NuGetCommand@2
-    displayName: NuGet push to artifact nuget feeds
-    inputs:
-      command: push
-      feedPublish: cb6db79e-fb46-458a-b910-ef34696069de
+- task: DotNetCoreCLI@2
+  displayName: dotnet pack
+  inputs:
+    command: pack
+    versioningScheme: byPrereleaseNumber
+- task: NuGetCommand@2
+  displayName: NuGet push to artifact nuget feeds
+  inputs:
+    command: push
+    feedPublish: cb6db79e-fb46-458a-b910-ef34696069de # using nuget feed id not name here
