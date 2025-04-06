@@ -48,4 +48,4 @@ steps:
   displayName: NuGet push to artifact nuget feeds
   inputs:
     command: push
-    feedPublish: Feed3
+    publishVstsFeed: 'Feed4'
